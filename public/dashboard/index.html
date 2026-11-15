@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Discord server management dashboard.">
+  <title>Dashboard · Discord Bot</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div id="loginView" class="login-view" hidden>
+    <div class="login-card">
+      <div class="brand-mark large">◆</div>
+      <p class="eyebrow">DISCORD MANAGEMENT</p>
+      <h1>Run your server with precision.</h1>
+      <p>Sign in with Discord to configure only the servers where you have authority. Your bot token never reaches this page.</p>
+      <a id="loginButton" class="button primary" href="/auth/discord">Continue with Discord <span>↗</span></a>
+      <p id="loginError" class="error-text" hidden></p>
+    </div>
+  </div>
+  <div id="app" class="app-shell" hidden>
+    <aside class="sidebar">
+      <a class="brand" href="/dashboard/"><span class="brand-mark">◆</span><span>Discord Bot</span></a>
+      <label class="server-label" for="guildSelect">SERVER</label>
+      <select id="guildSelect" class="server-select"></select>
+      <nav class="side-nav" aria-label="Dashboard sections">
+        <button class="nav-item active" data-view="overview">Overview</button>
+        <button class="nav-item" data-view="moderation">Moderation</button>
+        <button class="nav-item" data-view="community">Community</button>
+        <button class="nav-item" data-view="levels">Levels</button>
+        <button class="nav-item" data-view="reminders">Reminders</button>
+        <button class="nav-item" data-view="automation">Automation</button>
+        <button class="nav-item" data-view="media">Media & music</button>
+        <button class="nav-item" data-view="security">Permissions & logs</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="/docs/" class="side-link">Documentation <span>↗</span></a>
+        <a href="/auth/logout" class="side-link">Sign out <span>↗</span></a>
+      </div>
+    </aside>
+    <main class="dashboard-main">
+      <header class="topbar">
+        <div><p class="eyebrow">SERVER CONTROL</p><h1 id="pageTitle">Overview</h1></div>
+        <div class="top-actions"><span id="botStatus" class="status-chip">Checking connection</span><a class="button secondary small" href="/docs/getting-started.html">Guide</a></div>
+      </header>
+      <div id="notice" class="notice" hidden></div>
+      <section id="content" class="content"></section>
+    </main>
+  </div>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>
