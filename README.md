@@ -25,3 +25,14 @@ npm run dashboard
 ```
 
 Open `http://localhost:3000/dashboard/`. The dashboard never receives the bot token in the browser. The documentation pages remain available at `http://localhost:3000/docs/`.
+
+## GitHub-driven Termux updates
+
+After the repository is merged to `main`, initialise or update a Termux checkout with:
+
+```sh
+cd ~/discord-bot
+bash scripts/termux-github-update.sh
+```
+
+The updater uses fast-forward-only Git pulls, runs verification, and preserves `.env`, `data/`, `logs/`, `backups/` and `node_modules/`.

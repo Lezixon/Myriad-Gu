@@ -35,6 +35,13 @@ npm run dashboard
 
 Open `http://localhost:3000/dashboard/`. Use HTTPS and a production callback URL when hosting it publicly.
 
+For future source updates from GitHub:
+
+```sh
+cd ~/discord-bot
+bash scripts/termux-github-update.sh
+```
+
 For global registration, use `npm run deploy:commands:global` only after the guild test passes. Keep Android battery optimisation disabled for Termux, allow background activity, and use the wake lock supplied by `termux/start.sh`.
 
 The updater preserves `.env` and runtime state:
