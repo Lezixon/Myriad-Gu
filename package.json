@@ -1,0 +1,36 @@
+{
+  "name": "discord-public-bot",
+  "version": "5.0.0",
+  "private": true,
+  "description": "A public, modular Discord bot for moderation, levels, reminders, music, giveaways, media and community tools",
+  "type": "module",
+  "engines": {
+    "node": ">=24.17.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node scripts/check-syntax.mjs",
+    "test": "COMMAND_ONLY=1 NODE_ENV=test node --test test/public-bot.test.js",
+    "invite": "node src/invite.js",
+    "doctor": "node scripts/doctor-public.mjs",
+    "verify:offline": "node scripts/verify-public.mjs",
+    "verify:termux": "node scripts/verify-public.mjs --termux",
+    "verify:commands": "node scripts/verify-public.mjs --commands",
+    "deploy:commands": "node scripts/deploy-public-commands.mjs guild",
+    "deploy:commands:global": "node scripts/deploy-public-commands.mjs global",
+    "backup:verify": "node scripts/verify-backups.mjs",
+    "build:public": "node scripts/build-public-site.mjs",
+    "verify:public": "node scripts/build-public-site.mjs",
+    "dashboard": "node src/dashboard/server.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.27.0",
+    "dotenv": "^16.6.1",
+    "play-dl": "^1.9.7"
+  },
+  "optionalDependencies": {
+    "@discordjs/voice": "^0.19.2",
+    "@napi-rs/canvas": "^0.1.100",
+    "opusscript": "^0.0.8"
+  }
+}
